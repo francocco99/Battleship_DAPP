@@ -7,13 +7,31 @@ contract BoardGame {
    // at the end of the game anyone can check the board correspond the board have previous committed
 
   // Players  Merkle tree root
+  uint IDgame;
   mapping(address => bytes32) plyrsMerkleRt;
-  enum phase {WaitP,first, Second, Therd}
+  enum phase {WaitP,GameSt,Deal, PlaceSh, Shot,End}
   address public firstPlayer;
   address public SecondPlayer;
+
+  uint256 dealMoney;
+  uint256 amountMoney1;
+  uint256 amountMoney2;
+
   phase public currphase;
 
 
+  // events
+  event Gamestart(); // Second Player join the game
+  event Dealaccept(uint value);
+  event Dealrefuse();
+
+
+  function setSecondPl(address pl2) public
+  {
+    SecondPlayer=pl2;
+    emit Gamestart();
+    currphase=phase.GameSt;
+  }
     //memorizzo il merkel tree dell'utente
   function storeRoot(bytes32 Rootm) public
   {
@@ -44,9 +62,33 @@ contract BoardGame {
   {
 
   }
-
-  constructor(address creator) 
+  function placemoney1(uint256 money) public
   {
-    
+    amountMoney1=money;
+  }
+  function placemoney2(uint256 money) public
+  {
+    amountMoney2=money;
+  }
+  function checkmoney() public
+  {
+    if(amountMoney1==amountMoney2) 
+    {
+      dealMoney=amountMoney1;
+      currphase=phase.Deal;
+      emit Dealaccept(dealMoney);
+
+    }
+    else
+    {
+      emit Dealrefuse();
+    }
+  }
+
+  constructor(address creator, uint Id) 
+  {
+    firstPlayer = creator;
+    IDgame=Id;
+    currphase=phase.WaitP; //Waiting for the player
   }
 }
