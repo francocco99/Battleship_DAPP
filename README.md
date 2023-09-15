@@ -15,7 +15,9 @@ occupies have been hit, the ship is considered *sunk*.
 ships and that player wins the game.
 
 To avoid making the board visible to the opponent, the board is stored on the blockchain using the ***root of a MerkleTree***.
-When both players are in the match, the game begins, and the ***ETH*** wagered will be awarded to the winner of the match
+When both players are in the match, the game begins, and the ***ETH*** wagered will be awarded to the winner of the match.
+
+Battleship is implemented as a **DApp** application, so the functions of the application are implemented through smart contracts.
 ### SmartContract & Front-End
 
 The **GameRule.sol** contract is responsible for managing all the main functions, such as creating a new game and participating via an ID, joining randomly, and then overseeing all the game functions.
