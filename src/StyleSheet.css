@@ -1,0 +1,149 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+img{
+max-width: 20%;
+max-height: 20%
+}
+/* Style the header */
+.header {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+  font-size: 20px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  text-align: center;
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 450px; /* Should be removed. Only for demonstration */
+}
+.columngrid {
+  text-align: center;
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 700px; /* Should be removed. Only for demonstration */
+}
+.center {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+
+}
+
+.center_table {
+  position: relative;
+  
+  left: 50%;
+  transform: translate(-50%);
+  padding: 10px;
+}
+.griddiv{
+  width:400px;
+  text-align:center;
+  border:dotted 1px black;
+}
+
+input[type=text]{
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+   border-radius: 20px;
+   border: 1px solid #1a1b1c;
+   color: #0a0a0a;
+   width: 250px;
+   height: 30px;
+   padding-left: 10px;
+  }
+  
+input[type=text]:focus {
+   outline: none;
+   border: 1px solid #121212;
+   color: rgb(8, 8, 8);
+}
+select {
+  padding: 16px 16px;
+ 
+  border-radius: 4px;
+  border: 1px solid #121212;
+  
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+}
+.button {
+  background-color: #111211; /* Green */
+  border-radius: 8px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+.table {
+  border-collapse: collapse;
+  border: 1px solid black;
+  margin:0 auto;
+}
+.th, td {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  border: 1px solid black;
+}
+.backcell
+{
+  background: blue;
+}
+.whitecell
+{
+  background: white;
+}
+.cellgreen
+{
+  background: green;
+}
+.cellred
+{
+  background: red;
+}
+.colortd
+{
+  background-color:blue;
+}
+
+
+
+.button2:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
